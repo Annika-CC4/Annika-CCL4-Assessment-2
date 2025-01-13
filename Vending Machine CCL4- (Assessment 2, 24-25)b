@@ -1,5 +1,5 @@
 print ("Welcome to Happy Vending Machine\nSelect a category.")
-category1=input("[a] Hot drinks\n[b]Cold drinks\n[d]Room temp.\n") #selection of categories
+category1=input("[a] Hot drinks\n[b]Cold drinks\n[c]Room temp.\n") #selection of categories
 
 #assigning values to the given selection
 if category1=="a":
