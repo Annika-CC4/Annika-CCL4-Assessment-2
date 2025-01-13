@@ -1,7 +1,7 @@
 print ("Welcome to Happy Vending Machine\nSelect a category.")
-category1=input("[a] Hot drinks\n[b]Cold drinks\n[d]Room temp.\n") #variable that lets user choose which category of drinks the user want.
+category1=input("[a] Hot drinks\n[b]Cold drinks\n[d]Room temp.\n") #selection of categories
 
-#assigning values to the given letters
+#assigning values to the given selection
 if category1=="a":
     hot_drinks={'1aa' :'Caffè Macchiato, AED-10', '2aa':'Cortado, AED-10' , '3aa':'Latte, AED-10' , '4aa':'Americano, AED-10' ,'5aa':'Espresso, AED-10', 
                 '6aa': 'Flat White, AED-10' , '7bb':'Hot Choco, AED-15', '8bb':'Capuccino, AED-15'}
@@ -20,7 +20,7 @@ else:
 #no checking for error because it will automatically take them to else-statement.
 
 
-#all the categories are combined to one dictionary for accessibility 
+#all the categories are combined to one dictionary, for accessibility 
 category1_price={'1aa':10,'2aa':10,'3aa':10,'4aa':10,'5aa':10,'6aa':10,'7bb':15, '8bb':15, '1cc':10, '2cc':10, '3cc': 10, '4cc':10, '5dd': 12, '6dd': 12,
                   '7ee':14, '8ff': 15, '1gg':1} #Aked ChatGPT "What is wrong with my code?"-it gave me an idea how to access the price of product. 
 
@@ -31,7 +31,7 @@ while Input1 not in category1_price:
 print("You have chosen a drink!")
 
 
-# storing the three categories of drink into 1 general variable for better accessibility--announcing which product has been dispensed in the end.
+#storing the three categories of drink into 1 general variable for better accessibility--announcing which product has been dispensed in the end.
 if category1=="a":
     particular_drink1=hot_drinks[Input1] 
 elif category1=="b":
