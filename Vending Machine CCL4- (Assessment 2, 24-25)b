@@ -1,0 +1,126 @@
+print ("Welcome to Happy Vending Machine\nSelect a category.")
+
+
+category1=input("[a] Hot drinks\n[b]Cold drinks\n[d]Room temp.\n") #variable that lets user choose which category of drinks the user want.
+
+#assigning values to the given letters
+if category1=="a":
+    hot_drinks={'1aa' :'Caffè Macchiato, AED-10', '2aa':'Cortado, AED-10' , '3aa':'Latte, AED-10' , '4aa':'Americano, AED-10' ,'5aa':'Espresso, AED-10', 
+                '6aa': 'Flat White, AED-10' , '7bb':'Hot Choco, AED-15', '8bb':'Capuccino, AED-15'}
+    for key, value in hot_drinks.items():
+        print(key,value)
+    
+elif category1=="b":
+    cold_drinks={'1cc' : 'Iced Caffè Macchiato, AED-10', '2cc': ' Iced Cortado, AED-10', '3cc': 'Iced Latte, AED-10', '4cc': 'Iced Americano, AED-10',
+                  '5dd':'Iced Matcha, AED-12', '6dd': 'Iced Choco, AED-12', '7ee': 'Frappe AED-14', '8ff': 'Mango Smoothie, AED-15'}
+    for key, value in cold_drinks.items():
+        print(key,value)
+
+else:
+    room_temp={'1gg': 'Room Temp. Water, AED-1'}
+    print (room_temp)
+
+#no checking for error because it will automatically take them to else-statement.
+
+
+#all the categories are combined to one dictionary for accessibility 
+category1_price={'1aa':10,'2aa':10,'3aa':10,'4aa':10,'5aa':10,'6aa':10,'7bb':15, '8bb':15, '1cc':10, '2cc':10, '3cc': 10, '4cc':10, '5dd': 12, '6dd': 12,
+                  '7ee':14, '8ff': 15, '1gg':1}
+
+
+#choosing the product by acessing the value
+
+Input1=input("Input code from selection above:\n")
+while Input1 not in category1_price:
+    print("Invalid code. Try again")
+    Input1=input("Input code from selection above:\n")
+print("You have chosen a drink!")
+
+
+# storing the three categories of drink into 1 general variable for better accessibility--announcing which product has been dispensed in the end.
+if category1=="a":
+    particular_drink1=hot_drinks[Input1] 
+elif category1=="b":
+    particular_drink1=cold_drinks[Input1]
+elif category1=="c":
+    particular_drink1= room_temp[Input1]
+
+assigned_price1=int(category1_price[Input1])#variable to store price of the selected product. 
+
+
+print ("Would you like to purchase a pair with your drink?")
+Input2 = input("[a] yes\n[b] no need.\t")
+
+
+if Input2=="a":     #giving value to Input2's "a" and "b"
+    print("Please select your desired pair:\n")
+    products2={'11a' :"Chocolate Chip Cookie, AED-2", '22a' : "Vanilla cookie, AED-2" , '33b' : "Blueberry Muffin, 0AED-5" , '44a' : "Bavarian Donut, AED-2" ,
+                '55c':"Saltines, AED-1" , '66a':"Butter Cookies, AED-2" , '77d': "Chicken Hotdog, AED-10" , '88b':"Steamed Bun, AED-5"}
+    price2={'11a':2,'22a':2,'33b':5,'44a':2,'55c':1,'66a':2,'77d':10,'88b':5} 
+
+    for key, value in products2.items():
+        print(key,value)
+    Input3= input("Input code from selection above:\n")
+
+    #checking if the inputted code is in the dictionary
+    while Input3 not in price2:
+        print("Invalid code. Try again")
+        Input3= input("Input code from selection above:\n")
+    else:
+        print("You have chosen a drink and pair!")
+
+    assigned_price2=price2[Input3] #creating a variable which stores the price of the selected item
+    particular_snack2= products2[Input3] #a variable for storing the product accessed by code
+
+    Total=assigned_price1 + assigned_price2
+    print ("Total:",Total) 
+
+    Input4=int(input("Please input cash:\n"))
+
+    def subtotal(a,b):
+        return (a-b)
+    change=subtotal(Input4,Total)
+
+    while Input4<Total:
+        print("Insufficient amount. Please try again.\nInsert cash.")
+        Input4=int(input("Please input cash below 100:\n"))
+    else:           
+        print(f"Change:{change}")
+        print(f"{particular_drink1} and {particular_snack2} have been dispensed. Thank you for choosing Happy Vending Machine!")
+
+
+
+else:
+    print("You have chosen a drink!")  
+
+    print("Total:",assigned_price1)
+    Input5=int(input("Please input  cash:\n"))
+
+       
+    def subtotal2(a,b):
+        return (a-b)
+    change2=subtotal2(Input5,assigned_price1)
+
+    while Input5<assigned_price1:
+        print("Insufficient amount. Please try again.\nInsert cash.")
+        Input5=int(input("Please input cash:\n"))
+
+    else:
+        print(f"Change:{change2}")
+        print(f"{particular_drink1} has been dispensed. Thank you for using Happy Vending Machine!")
+
+#separated the calculation between only drink and drink & pair because they have different function placeholders for a and b.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
