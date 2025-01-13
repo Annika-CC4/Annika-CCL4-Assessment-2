@@ -1,6 +1,4 @@
 print ("Welcome to Happy Vending Machine\nSelect a category.")
-
-
 category1=input("[a] Hot drinks\n[b]Cold drinks\n[d]Room temp.\n") #variable that lets user choose which category of drinks the user want.
 
 #assigning values to the given letters
@@ -19,16 +17,12 @@ elif category1=="b":
 else:
     room_temp={'1gg': 'Room Temp. Water, AED-1'}
     print (room_temp)
-
 #no checking for error because it will automatically take them to else-statement.
 
 
 #all the categories are combined to one dictionary for accessibility 
 category1_price={'1aa':10,'2aa':10,'3aa':10,'4aa':10,'5aa':10,'6aa':10,'7bb':15, '8bb':15, '1cc':10, '2cc':10, '3cc': 10, '4cc':10, '5dd': 12, '6dd': 12,
                   '7ee':14, '8ff': 15, '1gg':1}
-
-
-#choosing the product by acessing the value
 
 Input1=input("Input code from selection above:\n")
 while Input1 not in category1_price:
@@ -50,7 +44,6 @@ assigned_price1=int(category1_price[Input1])#variable to store price of the sele
 
 print ("Would you like to purchase a pair with your drink?")
 Input2 = input("[a] yes\n[b] no need.\t")
-
 
 if Input2=="a":     #giving value to Input2's "a" and "b"
     print("Please select your desired pair:\n")
@@ -88,15 +81,12 @@ if Input2=="a":     #giving value to Input2's "a" and "b"
         print(f"Change:{change}")
         print(f"{particular_drink1} and {particular_snack2} have been dispensed. Thank you for choosing Happy Vending Machine!")
 
-
-
 else:
     print("You have chosen a drink!")  
 
     print("Total:",assigned_price1)
     Input5=int(input("Please input  cash:\n"))
 
-       
     def subtotal2(a,b):
         return (a-b)
     change2=subtotal2(Input5,assigned_price1)
