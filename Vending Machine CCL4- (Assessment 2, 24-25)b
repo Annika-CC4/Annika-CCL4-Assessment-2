@@ -19,7 +19,6 @@ else:
     print (room_temp)
 #no checking for error because it will automatically take them to else-statement.
 
-
 #all the categories are combined to one dictionary, for accessibility 
 category1_price={'1aa':10,'2aa':10,'3aa':10,'4aa':10,'5aa':10,'6aa':10,'7bb':15, '8bb':15, '1cc':10, '2cc':10, '3cc': 10, '4cc':10, '5dd': 12, '6dd': 12,
                   '7ee':14, '8ff': 15, '1gg':1} #Aked ChatGPT "What is wrong with my code?"-it gave me an idea how to access the price of product. 
